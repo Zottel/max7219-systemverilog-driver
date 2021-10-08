@@ -1,0 +1,17 @@
+[options]
+#mode bmc
+mode cover
+depth 512
+
+[engines]
+smtbmc
+
+[script]
+read_verilog -sv -formal max7219.sv
+read_verilog -sv max7219_shift.sv max7219_controller.sv
+prep -auto-top
+
+[files]
+max7219.sv
+max7219_shift.sv
+max7219_controller.sv
